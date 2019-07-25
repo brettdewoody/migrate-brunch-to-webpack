@@ -1,3 +1,5 @@
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
 module.exports = {
   entry: {
     app: './app/initialize.js'
@@ -10,7 +12,25 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
-      }
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader"
+          }
+        ]
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./app/assets/index.html",
+      filename: "./index.html"
+    })
+  ]
 };
