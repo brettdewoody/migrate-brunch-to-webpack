@@ -1,4 +1,7 @@
 module.exports = {
+  entry: {
+    app: './app/initialize.js'
+  },
   module: {
     rules: [
       {
