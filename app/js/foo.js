@@ -1,3 +1,3 @@
-export const someFunc = () => {
-  document.getElementById('testId').innerText = 'Text from a function within an import';
+export const someFunc = (text) => {
+  document.getElementById('testId').innerText = text;
 }
