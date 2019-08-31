@@ -2,7 +2,12 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: './app/initialize.js'
+    app: './app/js/initialize.js'
+  },
+  output: {
+    library: 'rmm',
+    libraryTarget: 'var',
+    filename: 'app.js'
   },
   module: {
     rules: [
@@ -30,7 +35,8 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: "./app/assets/index.html",
-      filename: "./index.html"
+      filename: "./index.html",
+      inject: false
     })
   ]
 };
